@@ -1,0 +1,17 @@
+{
+  "name": "text-split-simple-js",
+  "version": "1.0.2",
+  "description": "simple text split package",
+  "main": "src/TextSplit.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "split",
+    "text-split",
+    "text-split-simple"
+  ],
+  "author": "qodna25",
+  "license": "MIT"
+}
