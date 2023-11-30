@@ -1,6 +1,6 @@
 {
   "name": "text-split-simple-js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "simple text split package",
   "main": "src/TextSplit.js",
   "type": "module",
