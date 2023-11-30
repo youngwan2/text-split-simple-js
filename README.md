@@ -16,6 +16,7 @@ npm install text-split-simple-js
 ```
 
 ## 사용법
+#### HTML
 
 ```
 <!DOCTYPE html>
@@ -32,10 +33,14 @@ npm install text-split-simple-js
 </body>
 </html>
 ```
+
+#### Javascript
 ```
+
 /** 참고) 만약에 아래 경로로 접근 시 ./, ../ 에러가 뜬다면 아래 경로로 직접 접근하면 해결 됩니다.
 * from "./node_modules/text-split-simple-js/dist/TextSplit.js";
- */
+* (Reference) If you encounter an error when accessing the path using ./ or ../, try accessing the path directly as shown below to resolve the issue.
+*/
 import { SplitText } from "text-split-simple-js";
 
 // Split the text by spaces.
@@ -48,8 +53,8 @@ const words = new SplitText
 const chars = new SplitText().('#diet_title').chars() //["안","녕",",","세","상","아"]
 
 ```
-## 주의
-
+## 버그
+- 엄청 단순한 코드라 버그가 있을까 싶지만, 혹여나 버그가 발생한다면 이에 대한 보고는 언제나 환영합니다.
 
 
 ## 라이선스
