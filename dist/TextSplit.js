@@ -1,20 +1,9 @@
 export class SplitText {
     constructor(element) {
-        Object.defineProperty(this, "element", {
-            enumerable: true,
-            configurable: true,
-            writable: true,
-            value: void 0
-        });
-        Object.defineProperty(this, "text", {
-            enumerable: true,
-            configurable: true,
-            writable: true,
-            value: void 0
-        });
         this.element = document.querySelector(element);
         this.text = this.element.textContent;
     }
+    // It returns the text elements of the specified tag as [div, div, div].
     chars() {
         this.element.textContent = "";
         const split = this.text.split("");
@@ -29,6 +18,7 @@ export class SplitText {
             return div;
         });
     }
+    // It treats each space-separated segment as a single word and returns in the format [div, div].
     words() {
         this.element.textContent = "";
         const split = this.text.split(" ");

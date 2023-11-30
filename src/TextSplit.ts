@@ -5,7 +5,7 @@ export class SplitText {
     this.element = document.querySelector(element)
     this.text = this.element.textContent!
   }
-
+  // It returns the text elements of the specified tag as [div, div, div].
   chars() {
     this.element.textContent = "";
     const split = this.text.split("");
@@ -20,9 +20,9 @@ export class SplitText {
       return div;
     });
   }
-
+  // It treats each space-separated segment as a single word and returns in the format [div, div].
   words(){
-      this.element.textContent = "";
+    this.element.textContent = "";
     const split = this.text.split(" ");
     return split.map((char) => {
       const div = document.createElement("div");

@@ -5,7 +5,9 @@
   "main": "src/TextSplit.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "dev":"tsc --watch"
   },
   "keywords": [
     "split",
@@ -13,5 +15,8 @@
     "text-split-simple"
   ],
   "author": "qodna25",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^5.3.2"
+  }
 }
