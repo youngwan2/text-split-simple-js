@@ -83,9 +83,7 @@ const chars = new SplitText().('#diet_title').chars() //["안","녕",",","세","
 </head>
 <body>
     <h2>세월은 흘러 나이는 드는데, 난 아직도 백수라네</h2>
-
-    <script type="module" src="./node_modules//text-split-simple-js/dist/TextSplit.js"></script>
-    
+   
     <script type="module" src="./main.js"></script>
 </body>
 </html>
