@@ -35,10 +35,6 @@ npm install text-split-simple-js
 ```
 
 #### Javascript
-아래 예시의 출력문은 글자가 배열 형태로 할당된 것으로 나와 있으나 실제로는 각 음절이나 단어가 div 태그의 텍스트 노드로 등록되어 배열에 담긴 형태입니다.
-```
-[div, div, div, ...]
-```
 
 ```
 
@@ -58,8 +54,80 @@ const words = new SplitText
 const chars = new SplitText().('#diet_title').chars() //["안","녕",",","세","상","아"]
 
 ```
+위 예시의 출력문은 글자가 배열 형태로 할당된 것으로 나와 있으나 실제로는 각 음절이나 단어가 div 태그의 텍스트 노드로 등록되어 배열에 담긴 형태입니다.
+
+![image](https://github.com/youngwan2/text-split-simple-js/assets/107159871/12fa466a-4d0f-47df-846e-9c47eec88203)
+
+
+
+## 활용예제
+### WebAnimationAPI 를 사용한 텍스트 분리 애니메이션[js]
+바닐라 자바스크립트 (vite x ) 에서 적용한 활용 예시입니다. 
+
+#### HTML
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 {
+        position:fixed;
+        top:20%;
+        transition:1s;
+        left:50%;
+        }
+    </style>
+</head>
+<body>
+    <h2>세월은 흘러 나이는 드는데, 난 아직도 백수라네</h2>
+
+    <script type="module" src="./node_modules//text-split-simple-js/dist/TextSplit.js"></script>
+    
+    <script type="module" src="./main.js"></script>
+</body>
+</html>
+```
+
+#### JS
+
+```
+import { SplitText } from "./node_modules/text-split-simple-js/dist/TextSplit.js";
+
+const chars= new SplitText('h2').chars()
+// console.log(chars)
+
+chars.forEach((el,i)=>{
+    console.log(el)
+    const keyframe =[
+        {
+            transform:`translateY(-250px) scale(${Math.random()*1})`,
+            opacity:0
+        },
+        {
+            transform:"translate(0)",
+            opacity:1
+        }
+    ]
+    
+    const options = {
+        duration : 500*Math.random()*5,
+        easing:'ease-in-out',
+        iterations:1
+    }
+    el.animate(keyframe, options)
+})
+```
+#### 적용 결과
+![split](https://github.com/youngwan2/text-split-simple-js/assets/107159871/204fa152-f9c1-420f-9311-83179266a810)
+
+## 고려사항
+참고로 리액트 내에서도 사용은 가능합니다 다만, 리액트의 경우에는 가상돔을 사용해서 성능 최적화를 하기 때문에, DOM 요소에 직접 접근을 권장하지 않습니다. 이 패키지의 경우에는 셀렉터를 사용해서 요소에 직접 접근합니다. 그러므로 혹여나 쓰시는 분 있다면 예기치 못한 문제 발생 위험을 방지하기 위해 가도한 사용은 피해주시는게 좋습니다. 이 패키지 말고도 텍스트 분리 패키지도 많으므로, 상황에 맞게 활용해주세요. 
+
 ## 버그
-- 엄청 단순한 코드라 버그가 있을까 싶지만, 혹여나 버그가 발생한다면 이에 대한 보고는 언제나 환영합니다.
+엄청 단순한 코드라 버그가 있을까 싶지만, 혹여나 버그가 발생한다면 이에 대한 보고는 언제나 환영합니다.
 
 
 ## 라이선스
